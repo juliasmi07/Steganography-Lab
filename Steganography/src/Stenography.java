@@ -9,18 +9,29 @@ public class Stenography {
 	*/
 	public static void clearLow( Pixel p )
 	{
-	
+	int[] bitg = new int[40];
+	int[] bitb = new int[40];
+	int[] bitr = new int[40];
+		
 	int red = p.getRed();
-	int blue = p.getBlue()%100;
-	int green = p.getGreen()%100;
+	int blue = p.getBlue();
+	int green = p.getGreen();
 	
-	for(int i = 0; i <  String.valueOf(red).length(); i++) {
-		String
+	for(int i = 0; red > 0;i++) {
+	bitr[i] = red%2;
+	red = red/2;
 	}
-
-	p.setRed(red);
-	p.setBlue(blue);
-	p.setGreen(green);
+	
+	for(int i = 0; blue > 0;i++) {
+	bitb[i] = blue%2;
+	blue = blue/2;
+	}
+	
+	for(int i = 0; green > 0;i++) {
+	bitg[i] = green%2;
+	green = green/2;
+	}
+	
 
 		}	
 	public static Picture testClearLow(Picture pic) {
